@@ -2,66 +2,193 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Your Name | Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aman Kumar Singh | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to bottom right, #f4f4f4, #e0e7ff);
+            scroll-behavior: smooth;
+            animation: fadeIn 1.5s ease;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        header {
+            background: linear-gradient(to right, #1e1e2f, #3a3a5c);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            animation: slideDown 1s ease;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        nav {
+            background: #222;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            animation: fadeIn 2s ease;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #1e88e5;
+        }
+        section {
+            padding: 4rem 2rem;
+            max-width: 960px;
+            margin: auto;
+        }
+        .projects, .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: scaleUp 0.8s ease;
+        }
+        @keyframes scaleUp {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        .card h3 {
+            margin-bottom: 0.5rem;
+            color: #1e88e5;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #1e1e2f;
+            color: white;
+            margin-top: 2rem;
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #1e88e5;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        a.button:hover {
+            background: #005ecb;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1e1e2f;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #1e88e5;
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+        p a {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+        p a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-<header>
+<header data-aos="fade-down">
     <h1>Aman Kumar Singh</h1>
     <p>Software Developer Engineer II</p>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
 </header>
 
-<section id="about">
+<nav data-aos="fade-up">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>Hi, I’m a Backend Developer (SDE II) with 4 years of experience building scalable and reliable systems for CRM platforms. I focus on crafting high-quality APIs and real-time features using Java, Spring Boot, Kafka, and MongoDB. My work has improved user engagement by 20% and ensured 99.99% system uptime. I’m passionate about building backend solutions that drive real impact and deliver performance at scale.</p>
+    <p>
+        Hi, I’m a Backend Developer (SDE II) with 4 years of experience building scalable and reliable systems for CRM platforms. I focus on crafting high-quality APIs and real-time features using Java, Spring Boot, Kafka, and MongoDB. My work has improved user engagement by 20% and ensured 99.99% system uptime. I’m passionate about building backend solutions that drive real impact and deliver performance at scale.
+    </p>
 </section>
 
-<section id="skills">
+<section id="skills" data-aos="fade-up">
     <h2>Skills</h2>
-    <ul>
-        <li><strong>Languages:</strong> Java, Python, Angular, SQL, Shell Scripting</li>
-        <li><strong>Frameworks & Libraries:</strong> Spring Boot, Hibernate</li>
-        <li><strong>Tools & Platforms:</strong> Kafka, Docker, Git, GitHub</li>
-        <li><strong>Databases:</strong> MongoDB, MySQL</li>
-        <li><strong>Concepts:</strong> REST APIs, Microservices Architecture, Event-Driven Systems, Scalability, System Design</li>
-    </ul>
+    <div class="skills">
+        <div class="card"><strong>Languages:</strong> Java, Python, Angular, SQL, Shell Scripting</div>
+        <div class="card"><strong>Frameworks:</strong> Spring Boot, Hibernate</div>
+        <div class="card"><strong>Tools:</strong> Kafka, Docker, Git, GitHub</div>
+        <div class="card"><strong>Databases:</strong> MongoDB, MySQL</div>
+        <div class="card"><strong>Concepts:</strong> REST APIs, Microservices, Event-Driven Systems, Scalability, System Design</div>
+    </div>
 </section>
 
-<section id="projects">
+<section id="projects" data-aos="fade-up">
     <h2>Projects</h2>
-    <div class="project1">
-        <h3>Fanzone</h3>
-        <p>
-            Developed RESTful APIs that allow players to set, retrieve, and delete their favorite teams, and configure preferences based on selected teams. Built using Java, Spring Boot, and MongoDB, and integrated through an internal company API framework. Enabled seamless service-to-service communication using Service Registry (SR), ensuring reliable and scalable interactions across the platform.
-        </p>    </div>
-    <div class="project2">
-        <h3>Coin Economy</h3>
-        <p>
-            Contributed to multiple features of the Coin Economy system, with a major focus on implementing the transaction module—enabling coin add, deduct, and transaction history functionalities. Built robust support for multi-zone handling using MongoDB transactions and Spring Boot. Managed all date and time operations natively in Java without third-party libraries, ensuring high-quality NFRs (non-functional requirements) such as performance, accuracy, and reliability.
-        </p>    </div>
-    <div class="project3">
-        <h3>Daily Collect</h3>
-        <p>
-            Took technical ownership of the project, guiding the team in implementing a reveal-based interactive UI experience for players. Designed and developed backend services using Java 17, Spring Boot, Kafka, and MongoDB to support real-time interactions and seamless gameplay engagement. Ensured scalable and maintainable architecture while mentoring colleagues throughout the development process.
-        </p>    </div>
-    <!-- Add more project blocks -->
+    <div class="projects">
+        <div class="card">
+            <h3>Fanzone</h3>
+            <p>Developed RESTful APIs that allow players to set, retrieve, and delete their favorite teams, and configure preferences based on selected teams. Built using Java, Spring Boot, and MongoDB, and integrated through an internal company API framework. Enabled seamless service-to-service communication using Service Registry (SR), ensuring reliable and scalable interactions across the platform.</p>
+        </div>
+        <div class="card">
+            <h3>Coin Economy</h3>
+            <p>Contributed to multiple features of the Coin Economy system, with a major focus on implementing the transaction module—enabling coin add, deduct, and transaction history functionalities. Built robust support for multi-zone handling using MongoDB transactions and Spring Boot. Managed all date and time operations natively in Java without third-party libraries, ensuring high-quality NFRs such as performance, accuracy, and reliability.</p>
+        </div>
+        <div class="card">
+            <h3>Daily Collect</h3>
+            <p>Took technical ownership of the project, guiding the team in implementing a reveal-based interactive UI experience for players. Designed and developed backend services using Java 17, Spring Boot, Kafka, and MongoDB to support real-time interactions and seamless gameplay engagement. Ensured scalable and maintainable architecture while mentoring colleagues throughout the development process.</p>
+        </div>
+    </div>
 </section>
 
-<section id="contact">
+<section id="contact" data-aos="fade-up">
     <h2>Contact</h2>
-    <p><a href="mailto:amansingh2017.as@gmail.com">Gmail</a></p>
-    <p><a href="https://www.linkedin.com/in/aman-singh-530436191/">Linkedin</a></p>
+    <p>Email: <a href="mailto:amansingh2017.as@gmail.com">amansingh2017.as@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/aman-singh-530436191/">linkedin.com/in/aman-singh-530436191</a></p>
 </section>
 
 <footer>
-    <p>&copy; 2025 Aman Kumar Singh</p>
+    <p>&copy; 2025 Aman Kumar Singh. All rights reserved.</p>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000 });
+</script>
 </body>
 </html>
