@@ -58,10 +58,14 @@
             max-width: 960px;
             margin: auto;
         }
-        .projects, .skills {
+        .skills {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+        }
+
+        .projects {
+            display: block; /* vertical stack for projects */
         }
         .card {
             background: white;
@@ -130,54 +134,45 @@
 <body>
 <header data-aos="fade-down">
     <h1>Aman Kumar Singh</h1>
-    <p>Software Developer Engineer II</p>
+    <p>Backend Developer</p>
 </header>
 
 <nav data-aos="fade-up">
     <a href="#about">Introduction</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Technical Skills</a>
-    <a href="#projects">Highlighted Projects</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <section id="about" data-aos="fade-up">
     <h2>Introduction</h2>
     <p>
-        Hi, I’m a Backend Developer (SDE II) with 4 years of experience building scalable and reliable systems for CRM platforms. I focus on crafting high-quality APIs and real-time features using Java, Spring Boot, Kafka, and MongoDB. My work has improved user engagement by 20% and ensured 99.99% system uptime. I’m passionate about building backend solutions that drive real impact and deliver performance at scale.
+        I’m Aman Kumar Singh, a Software Engineer II at Entain India with over 4 years of experience building highly scalable backend systems. I specialize in Java, Spring Boot, Kafka, and MongoDB, and have a proven track record of delivering high-performance microservices handling 1M+ daily transactions. Passionate about distributed systems, CI/CD, and mentoring developers. Always learning, always building.
     </p>
 </section>
 
 <section id="experience" data-aos="fade-up">
     <h2>Experience</h2>
     <div class="card">
-        <h3>Entain India · Software Development Engineer II</h3>
+        <h3>Entain India · Software Engineer II</h3>
         <p><strong>Dec 2024 – Present · 8 mos · Hyderabad (Hybrid)</strong></p>
         <ul>
-            <li>Designed and implemented scalable, fault-tolerant backend systems serving millions of users, with a focus on availability, performance, and reliability.</li>
-            <li>Led migration to microservices architecture, reducing latency by 30% and improving scalability by 40%.</li>
-            <li>Worked on optimizing distributed systems, improving API response time by 25%.</li>
-            <li>Mentored junior developers in backend development and system design.</li>
-            <li>Enhanced incident response processes, cutting MTTR by 50%.</li>
+            <li>Migrated services from Java 1.7 to 17, improving performance and reducing technical debt</li>
+            <li>Designed and maintained microservices handling 1M+ daily transactions</li>
+            <li>Mentored and upskilled 3+ junior developers in Agile and CI/CD practices</li>
+            <li>Led CI/CD pipeline enhancements reducing deployment time by 30%</li>
+            <li>Contributed to sprint planning, architecture reviews, and RCA documentation</li>
         </ul>
     </div>
     <div class="card">
-        <h3>Entain India · Software Development Engineer</h3>
-        <p><strong>Jan 2022 – Nov 2024 · 2 yrs 11 mos · Hyderabad (Hybrid)</strong></p>
+        <h3>Entain India · Software Engineer I</h3>
+        <p><strong>Sep 2021 – Nov 2024 · 2 yrs 11 mos · Hyderabad (Hybrid)</strong></p>
         <ul>
-            <li>Developed and optimized backend systems using Java, Spring Boot, and MongoDB.</li>
-            <li>Contributed to system design and low-level architecture decisions.</li>
-            <li>Improved database access efficiency, reducing query latency by 20%.</li>
-            <li>Optimized CI/CD pipelines to enhance deployment reliability.</li>
-            <li>Worked closely with cross-functional teams to ensure smooth delivery.</li>
-        </ul>
-    </div>
-    <div class="card">
-        <h3>Entain India · Software Trainee</h3>
-        <p><strong>Sep 2021 – Dec 2021 · 4 mos · Hyderabad (Hybrid)</strong></p>
-        <ul>
-            <li>Participated in backend development for e-commerce APIs using Spring Boot and MongoDB.</li>
-            <li>Assisted in debugging and enhancing system performance and stability.</li>
+            <li>Developed and maintained backend modules supporting high-availability gaming systems</li>
+            <li>Implemented RESTful services and real-time features using Kafka and MongoDB</li>
+            <li>Enhanced observability using ELK stack for faster RCA and uptime improvements</li>
+            <li>Delivered 10+ high-reliability production APIs used by 500K+ users</li>
         </ul>
     </div>
 </section>
@@ -185,31 +180,70 @@
 <section id="skills" data-aos="fade-up">
     <h2>Technical Skills</h2>
     <div class="skills">
-        <div class="card"><strong>Languages:</strong> Java, Python, Angular, SQL, Shell Scripting</div>
-        <div class="card"><strong>Frameworks:</strong> Spring Boot, Hibernate</div>
-        <div class="card"><strong>Tools:</strong> Kafka, Docker, Git, GitHub</div>
-        <div class="card"><strong>Databases:</strong> MongoDB, MySQL</div>
-        <div class="card"><strong>Concepts:</strong> REST APIs, Microservices, Event-Driven Systems, Scalability, System Design</div>
+        <div class="card"><strong>Languages:</strong>  Java, Python, JavaScript, C, C++, SQL </div>
+        <div class="card"><strong>Frameworks:</strong> Spring Boot, Spring MVC, Hibernate, JSP, Servlets, Angular, JHipster </div>
+        <div class="card"><strong>Databases:</strong>  MongoDB, MySQL, Redis </div>
+        <div class="card"><strong>Messaging & Streaming:</strong>  Apache Kafka </div>
+        <div class="card"><strong>DevOps & Cloud:</strong> Docker, Kubernetes, AWS, Jenkins </div>
+        <div class="card"><strong>Monitoring & Logging:</strong> ELK Stack (Elasticsearch, Logstash, Kibana), AppDynamics</div>
+        <div class="card"><strong>ETL & Integration:</strong> Apache NiFi </div>
+        <div class="card"><strong>Tools & Platforms:</strong> Maven, Gradle, Git, SVN, Jira, Log4j, JUnit, Mockito, Tomcat </div>
+        <div class="card"><strong>Concepts:</strong> Microservices, Distributed Systems, OOP, Multithreading, DSA, Agile, CI/CD, System Design(HLD && LLD)</div>
     </div>
 </section>
 
 <section id="projects" data-aos="fade-up">
-    <h2>Highlighted Projects</h2>
+    <h2>Projects</h2>
     <div class="projects">
+
         <div class="card">
-            <h3>Fanzone</h3>
-            <p>Developed RESTful APIs that allow players to set, retrieve, and delete their favorite teams, and configure preferences based on selected teams. Built using Java, Spring Boot, and MongoDB, and integrated through an internal company API framework. Enabled seamless service-to-service communication using Service Registry (SR), ensuring reliable and scalable interactions across the platform.</p>
+            <h3>Daily Collect – Interactive Reward System</h3>
+            <p>
+                A real-time gamified rewards platform that boosts daily player engagement through interactive, reveal-based rewards. Designed for high concurrency and seamless gameplay.
+            </p>
+            <p><strong>Role:</strong> Technical Mentor & Backend Developer</p>
+            <p><strong>Tech Stack:</strong> Java 17, Spring Boot, Kafka, MongoDB, Microservices, Tomcat 10, Logstash</p>
+            <ul>
+                <li>Took technical ownership of the Daily Collect project, delivering reveal-based rewards for players</li>
+                <li>Designed and developed backend services supporting real-time interactions and seamless gameplay</li>
+                <li>Mentored team members and collaborated with the tech lead on implementation strategy</li>
+                <li>Built scalable, maintainable services with microservice architecture and centralized logging via Logstash</li>
+            </ul>
         </div>
+
         <div class="card">
-            <h3>Coin Economy</h3>
-            <p>Contributed to multiple features of the Coin Economy system, with a major focus on implementing the transaction module—enabling coin add, deduct, and transaction history functionalities. Built robust support for multi-zone handling using MongoDB transactions and Spring Boot. Managed all date and time operations natively in Java without third-party libraries, ensuring high-quality NFRs such as performance, accuracy, and reliability.</p>
+            <h3>Coin Economy System</h3>
+            <p>
+                A distributed coin management system supporting real-time virtual transactions across multiple gaming zones. Ensures consistency, reliability, and traceability of all currency operations.
+            </p>
+            <p><strong>Role:</strong> Backend Developer</p>
+            <p><strong>Tech Stack:</strong> Java 11, Spring Boot, REST API, MongoDB, Terracotta, Tomcat 9</p>
+            <ul>
+                <li>Developed core modules for managing virtual currency operations across gaming zones</li>
+                <li>Implemented transaction module for coin add, deduct, and history tracking</li>
+                <li>Ensured multi-zone consistency with MongoDB transactions and handled time operations using native Java APIs</li>
+                <li>Delivered high-performance and reliable modules aligned with NFRs</li>
+            </ul>
         </div>
+
         <div class="card">
-            <h3>Daily Collect</h3>
-            <p>Took technical ownership of the project, guiding the team in implementing a reveal-based interactive UI experience for players. Designed and developed backend services using Java 17, Spring Boot, Kafka, and MongoDB to support real-time interactions and seamless gameplay engagement. Ensured scalable and maintainable architecture while mentoring colleagues throughout the development process.</p>
+            <h3>DCRM – Digital Customer Relationship Management</h3>
+            <p>
+                An internal CRM platform for real-time, multi-channel customer engagement and campaign orchestration. Enables personalized communication across integrated systems.
+            </p>
+            <p><strong>Role:</strong> Java Developer</p>
+            <p><strong>Tech Stack:</strong> Java 7, Spring 4.x, MongoDB, Kafka, Tomcat 8, IntelliJ</p>
+            <ul>
+                <li>Developed the DCRM platform to manage multi-channel customer communications and marketing</li>
+                <li>Built REST APIs and middleware to integrate CRM with internal and external systems</li>
+                <li>Used Kafka for real-time event handling and configured Logstash for centralized logging and observability</li>
+                <li>Contributed to architecture decisions and mentored juniors during CRM modernization</li>
+            </ul>
         </div>
+
     </div>
 </section>
+
 
 <section id="contact" data-aos="fade-up">
     <h2>Contact</h2>
